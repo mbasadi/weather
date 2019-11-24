@@ -8,14 +8,12 @@ export function fetchWeather(city){
 
   const request =axios.get(url);
 
-//   return (dispatch)=>{
-//     request.then((data)=>{dispatch(
-//
-        return{type:FETCH_WEATHER,payload:data}
-//
-//   )
-// }
-// )
-//
-//   };
-}
+
+   return (dispatch)=>{
+     request.then(({data})=>{
+dispatch({
+       type:FETCH_WEATHER,
+       payload:data}
+    )} )
+   };
+   }
